@@ -1,0 +1,32 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class task2_3 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Введите количество строк (n): ");
+        int n = scanner.nextInt();
+
+        System.out.print("Введите количество столбцов (m): ");
+        int m = scanner.nextInt();
+
+        int[][] array = new int[n][m];
+        Random random = new Random();
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                array[i][j] = random.nextInt(100); // генерируем случайное целое число от 0 до 99
+            }
+        }
+
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                sum += array[i][j];
+            }
+        }
+
+        System.out.println("Сумма всех элементов массива: " + sum);
+    }
+}
