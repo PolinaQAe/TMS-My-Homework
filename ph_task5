@@ -1,0 +1,22 @@
+public class ph_task5 {
+    private String phoneNumber;
+    private String model;
+    private double screenSize;
+
+    public Phone(String phoneNumber, String model, double screenSize) {
+        this.phoneNumber = phoneNumber;
+        this.model = model;
+        this.screenSize = screenSize;
+    }
+    
+    public void receiveCall(String callerName, String callerNumber) {
+        System.out.println("Incoming call from: " + callerName + " (" + callerNumber + ")");
+    }
+    
+    public void sendMessage(String... phoneNumbers) {
+        System.out.println("Sending message to the following phone numbers:");
+        for (String phoneNumber : phoneNumbers) {
+            System.out.println(phoneNumber);
+        }
+    }
+}
