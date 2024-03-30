@@ -1,0 +1,22 @@
+public class Phone {
+    private String number;
+    private String model;
+    private double weight;
+
+    // конструктор класса
+    public Phone(String number, String model, double weight) {
+        this.number = number;
+        this.model = model;
+        this.weight = weight;
+    }
+
+    // метод receiveCall для вывода сообщения о звонке
+    public void receiveCall(String callerName) {
+        System.out.println("Звонит " + callerName);
+    }
+
+    // метод getNumber для получения номера телефона
+    public String getNumber() {
+        return number;
+    }
+}
