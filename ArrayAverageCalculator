@@ -1,0 +1,50 @@
+import java.util.Random;
+
+public class ArrayAverageCalculator {
+    public static void main(String[] args) {
+        int[] array1 = new int[5];
+        int[] array2 = new int[5];
+        Random random = new Random();
+
+        for (int i = 0; i < 5; i++) {
+            array1[i] = random.nextInt(10); // Заполняем случайными числами от 0 до 9
+        }
+
+        for (int i = 0; i < 5; i++) {
+            array2[i] = random.nextInt(10); // Заполняем случайными числами от 0 до 9
+        }
+
+        System.out.print("Array 1: ");
+        for (int num : array1) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+
+        System.out.print("Array 2: ");
+        for (int num : array2) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+
+        // Вычисляем среднее арифметическое для обоих массивов
+        double average1 = 0;
+        for (int num : array1) {
+            average1 += num;
+        }
+        average1 /= array1.length;
+
+        double average2 = 0;
+        for (int num : array2) {
+            average2 += num;
+        }
+        average2 /= array2.length;
+
+        if (average1 > average2) {
+            System.out.println("Среднее арифметическое для массива 1 больше: " + average1);
+        } else if (average2 > average1) {
+            System.out.println("Среднее арифметическое для массива 2 больше: " + average2);
+        } else {
+            System.out.println("Средние арифметические равны: " + average1);
+        }
+    }
+}
