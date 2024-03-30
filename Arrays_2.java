@@ -1,45 +1,39 @@
 import java.util.Arrays;
-import java.util.Random;
 import java.util.Scanner;
-public class Arrays_2 {
-    public static void main(String[] args)
-    {
-        Scanner sc = new Scanner(System.in);
-        int[] arr = new Random();
 
-        System.out.println(Arrays.toString(arr));
+public class RemoveElement {
 
-        System.out.print("Введите ваше число: ");
-        int number = sc.nextInt();
+    public static void Arrays_2 (String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите элементы массива, разделенные пробелами:");
+        int[] arr = Arrays.stream(scanner.nextLine().split(" "))
+                .mapToInt(Integer::parseInt)
+                .toArray();
 
-        int count = 0;
-        int count2 = 0;
-
-        for (int i = 0; i < arr.length; i++)
-        {
-            if (number != arr[i])
-            {
-                count++;
-            }
-            else
-            {
-                count2++;
+        
+        System.out.println("Введите число, которое нужно удалить:");
+        int numberToRemove = scanner.nextInt();
+        int index = -1;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == numberToRemove) {
+                index = i;
+                break;
             }
         }
-        if (count2 == 0){
-            System.out.println("Ваше число не входит в массив");
-        }
 
-        int[] Arr = new int[count];
-
-        for (int i = 0, j = 0; i < arr.length; i++)
-        {
-            if (number != arr[i])
-            {
-                newArr[j] = arr[i];
-                j++;
+        if (index == -1) {
+            System.out.println("Такого числа нет в массиве");
+        } 
+        else {
+            int[] newArr = new int[arr.length - 1];
+            for (int i = 0, j = 0; i < arr.length; i++) {
+                if (arr[i] == numberToRemove) {
+                    continue;
+                }
+                newArr[j++] = arr[i];
             }
+            System.out.println("Новый массив без указанного числа:");
+            System.out.println(Arrays.toString(newArr));
         }
-        System.out.println(Arrays.toString(Arr));
     }
 }
