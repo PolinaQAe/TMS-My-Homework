@@ -1,0 +1,20 @@
+public class ph_task2 {
+    public static void main(String[] args) {
+        // Создаем три экземпляра класса Phone
+        Phone phone1 = new Phone("123456789", "iPhone 13", 0.5);
+        Phone phone2 = new Phone("987654321", "Samsung Galaxy S20", 0.6);
+        Phone phone3 = new Phone("555666777", "Google Pixel 6", 0.4);
+        
+        // Вызываем методы для каждого из объектов
+        System.out.println("Номер телефона phone1: " + phone1.getNumber());
+        System.out.println("Модель телефона phone1: " + phone1.getModel());
+        System.out.println("Вес телефона phone1: " + phone1.getWeight());
+        
+        System.out.println("Номер телефона phone2: " + phone2.getNumber());
+        System.out.println("Модель телефона phone2: " + phone2.getModel());
+        System.out.println("Вес телефона phone2: " + phone2.getWeight());
+        
+        System.out.println("Номер телефона phone3: " + phone3.getNumber());
+        System.out.println("Модель телефона phone3: " + phone3.getModel());
+        System.out.println("Вес телефона phone3: " + phone3.getWeight());
+    }
