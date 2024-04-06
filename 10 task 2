@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void 10 task 2(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите строку:");
+        String input = scanner.nextLine();
+
+        String[] words = input.split("\\s+");
+
+        String wordWithMinUniqueChars = "";
+        int minUniqueChars = Integer.MAX_VALUE;
+
+        for (String word : words) {
+            int uniqueChars = countUniqueCharacters(word);
+            if (uniqueChars < minUniqueChars) {
+                minUniqueChars = uniqueChars;
+                wordWithMinUniqueChars = word;
+            }
+        }
+
+        System.out.println("Слово с минимальным количеством уникальных символов: " + wordWithMinUniqueChars);
+    }
+
+    private static int countUniqueCharacters(String word) {
+        String uniqueChars = "";
+        for (int i = 0; i < word.length(); i++) {
+            char c = word.charAt(i);
+            if (uniqueChars.indexOf(c) == -1) {
+                uniqueChars += c;
+            }
+        }
+        return uniqueChars.length();
+    }
