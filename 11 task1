@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class 11 task1 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int sum = 0;
+
+        System.out.println("Введите целые положительные числа (для окончания введите отрицательное число):");
+
+        while (true) {
+            if (scanner.hasNextInt()) {
+                int number = scanner.nextInt();
+
+                if (number < 0) {
+                    break;
+                }
+
+                if (number > 0) {
+                    sum += number;
+                }
+            } else {
+                scanner.next(); // Пропускаем значение, если введено не число
+            }
+        }
+
+        System.out.println("Сумма введенных положительных чисел: " + sum);
+    }
+}
