@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class 10 task3 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите строку:");
+        String input = scanner.nextLine();
+
+        System.out.println("Введите номер слова для проверки:");
+        int wordIndex = scanner.nextInt();
+
+        String[] words = input.split("\\s+");
+        
+        if (wordIndex <= 0 || wordIndex > words.length) {
+            System.out.println("Ошибка: в строке нет слова с таким номером!");
+            return;
+        }
+
+        String wordToCheck = words[wordIndex - 1];
+        if (isPalindrome(wordToCheck)) {
+            System.out.println("Слово \"" + wordToCheck + "\" является палиндромом.");
+        } else {
+            System.out.println("Слово \"" + wordToCheck + "\" не является палиндромом.");
+        }
+    }
+
+    private static boolean isPalindrome(String word) {
+        int left = 0;
+        int right = word.length() - 1;
+        
+        while (left < right) {
+            if (word.charAt(left) != word.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+}
